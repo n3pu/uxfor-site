@@ -84,6 +84,9 @@ nav ul a {
   font-weight: 400;
   font-size: 1.5rem;
 }
+nav ul a:hover {
+  text-decoration: underline;
+}
 
 nav span {
   display: none;
@@ -179,6 +182,10 @@ nav span {
   border-radius: 30px;
   border: none;
   cursor: pointer;
+}
+.secondary-button:hover {
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
 }
 
 footer {

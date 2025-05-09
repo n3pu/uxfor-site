@@ -2,17 +2,32 @@ import banner from '../src/assets/banner.jpg'
 import { Footer } from './components/Footer'
 import { Navbar } from './components/Navbar'
 import { SecondaryButton } from './components/SecondaryButton'
+import ScrollAnimation from 'react-animate-on-scroll'
+import "animate.css/animate.compat.css"
+import { css, Global } from '@emotion/react'
 
 function App() {
+  const fadeInUp = css`
+    @keyframes fadeInUp {
+      0% {
+        transform: translate3d(0, 30%, 0);
+      }
+      100% {
+        translateZ(0)
+      }
+    }
+  `;
+
   return (
     <>
       <Navbar />
       <div className="banner">
+        <Global styles={fadeInUp} />
         <div className="banner-content">
-          <div className='banner-container banner-text-container'>
+          <ScrollAnimation animateIn="fadeInUp" duration={1.2} className='banner-container banner-text-container'>
             <h1>UXFor</h1>
             <p>É a maior comunidade de UX de Fortaleza - CE. Movimento independente para promover o conhecimento e estudos sobre a Experiência do Usuário (UX)</p>
-          </div>
+          </ScrollAnimation>
           <div className="banner-container banner-image-container">
             <img src={banner} className="banner-image" alt="Banner" />  
           </div>
