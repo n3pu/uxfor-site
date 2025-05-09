@@ -5,6 +5,7 @@ import { SecondaryButton } from './components/SecondaryButton'
 import ScrollAnimation from 'react-animate-on-scroll'
 import "animate.css/animate.compat.css"
 import { css, Global } from '@emotion/react'
+import { Element } from 'react-scroll'
 
 function App() {
   const fadeInUp = css`
@@ -24,7 +25,7 @@ function App() {
       <div className="banner">
         <Global styles={fadeInUp} />
         <div className="banner-content">
-          <ScrollAnimation animateIn="fadeInUp" duration={1.2} className='banner-container banner-text-container'>
+          <ScrollAnimation animateIn="fadeInUp" duration={1.2} style={{opacity:1}} className='banner-container banner-text-container'>
             <h1>UXFor</h1>
             <p>É a maior comunidade de UX de Fortaleza - CE. Movimento independente para promover o conhecimento e estudos sobre a Experiência do Usuário (UX)</p>
           </ScrollAnimation>
@@ -32,7 +33,9 @@ function App() {
             <img src={banner} className="banner-image" alt="Banner" />  
           </div>
         </div>
-        <p style={{width: '100%', textAlign: 'center'}}>Nos Siga:</p>
+        <Element name="nosSiga">
+          <p style={{width: '100%', textAlign: 'center'}} id="nosSiga">Nos Siga:</p>
+        </Element>
         <div className="social-media-buttons">
           <SecondaryButton text="WhatsApp" onClick={() => window.open('https://chat.whatsapp.com/CbuGGYGIdxUD0F9bHr6wB7', '_blank')} />
           <SecondaryButton text="Telegram" onClick={() => window.open('https://t.me/joinchat/Ed3KJ3qhxW1lZDFh', '_blank')} />
