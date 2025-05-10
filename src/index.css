@@ -94,7 +94,7 @@ nav span {
 }
 
 .nav {
-  /* position: fixed;
+  position: fixed;
   top: 0;
   left: -100%;
   width: 80%;
@@ -103,10 +103,11 @@ nav span {
   background-color: var(--color-primary);
   padding: 80px 20px 20px;
   transition: left 0.3s ease;
-  z-index: 999; */
+  z-index: 999;
 }
 .nav li {
   display: inline-block;
+  white-space: nowrap;
 }
 .nav.active {
   left: 0;
@@ -308,9 +309,10 @@ footer {
     background-color: transparent;
     padding: 0;
     left: 0;
+    max-width: none;
   }
   .nav li {
-    display: none;
+    display: inline-block;
   }
   .banner {
     display: flex;
